@@ -10,9 +10,21 @@
 //     println!("{}, world!", s2); //s1 is no longer valid
 // }
 
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1.clone(); // clone creates a deep copy of the value
+//     println!("{}, world!", s1); // s1 is still valid
+//     println!("{}, world!", s2); // s2 is also valid
+// }
+
+//borrowing allows you to have references to a value without taking ownership of it. This is done using the & symbol.
+
 fn main() {
-    let s1 = String::from("hello");
-    let s2 = s1.clone(); // clone creates a deep copy of the value
-    println!("{}, world!", s1); // s1 is still valid
-    println!("{}, world!", s2); // s2 is also valid
+
+    let x: i32 = 5;
+
+    let y = &x; //y is a reference to the value of x
+
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
 }
