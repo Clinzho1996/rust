@@ -40,8 +40,10 @@ struct BankAccount {
 fn withdraw(account: &mut BankAccount, amount: f64) {
     if account.balance >= amount {
         account.balance -= amount;
+        println!(" Account owned by {}", account.owner);
         println!("Withdrawal successful. New balance: {}", account.balance);
     } else {
+        println!(" Account owned by {}", account.owner);
         println!("Insufficient funds. Current balance: {}", account.balance);
     }
 }
