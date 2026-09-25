@@ -1,41 +1,18 @@
-fn main () {
-human_id("Alice", 30, 165);
-add(5, 10);
+// Ownership, referencing and borrowing in Rust
 
-let y:i32 = add(5, 10);
-println!("Y is {}", y);
+// In Rust, ownership is a set of rules that governs how a Rust program manages memory. The ownership system is designed to ensure memory safety without needing a garbage collector.
 
-let _X: i32 = {
-    let price: i32 = 100;
-    let tax: i32 = 10;
-    price + tax
-};
+//each value in Rust has a variable that’s called its owner. There can only be one owner at a time, and when the owner goes out of scope, the value will be dropped (memory is freed).
 
-println!("X is {}", _X);
+// fn main () {
+//     let s1 = String::from("hello");
+//     let s2 = s1;
+//     println!("{}, world!", s2); //s1 is no longer valid
+// }
 
-//calling bmi function
-let weight: f64 = 92.0; // in kilograms
-let height: f64 = 1.74; // in meters
-let bmi: f64 = calculate_bmi(weight, height);
-println!("My BMI is {:.2}", bmi);
-}
-
-
-//insert more than one value
-fn human_id(name: &str, age: u32, height: u32) -> String {
-    println!("My name is {} and I am {} years old and {}cm tall.", name, age, height);
-    format!("{} is {} years old and {} cm tall.", name, age, height)
-}
-
-//expressions and statements
-//expressions evaluate to a value, statements do not
-
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-
-//BMI
-fn calculate_bmi(weight: f64, height: f64) -> f64 {
-    weight / (height * height)
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone(); // clone creates a deep copy of the value
+    println!("{}, world!", s1); // s1 is still valid
+    println!("{}, world!", s2); // s2 is also valid
 }
