@@ -19,12 +19,40 @@
 
 //borrowing allows you to have references to a value without taking ownership of it. This is done using the & symbol.
 
+// fn main() {
+
+//     let x: i32 = 5;
+
+//     let y = &x; //y is a reference to the value of x
+
+//     println!("The value of x is: {}", x);
+//     println!("The value of y is: {}", y);
+// }
+
+//structs in Rust are a way to create custom data types that can hold multiple values. Structs can have fields of different types, and they can be used to model real-world entities.
+
+struct BankAccount {
+    owner: String,
+    account_number: String,
+    balance: f64,
+}
+
+fn withdraw(account: &mut BankAccount, amount: f64) {
+    if account.balance >= amount {
+        account.balance -= amount;
+        println!("Withdrawal successful. New balance: {}", account.balance);
+    } else {
+        println!("Insufficient funds. Current balance: {}", account.balance);
+    }
+}
+
 fn main() {
+    let mut account = BankAccount {
+        owner: "John Doe".to_string(),
+        account_number: "123456789".to_string(),
+        balance: 1000.0,
+    };
 
-    let x: i32 = 5;
-
-    let y = &x; //y is a reference to the value of x
-
-    println!("The value of x is: {}", x);
-    println!("The value of y is: {}", y);
+    withdraw(&mut account, 1200.0);
+    withdraw(&mut account, 200.0);
 }
