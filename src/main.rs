@@ -112,14 +112,21 @@
 
 // loops allow you to execute a block of code multiple times. Rust provides two types of loops: while loops and for loops.
 
+// fn main() {
+//     let mut number = 3;
+
+//     while number != 0 {
+//         println!("{}!", number);
+
+//         number -= 1;
+//     }
+
+//     println!("LIFTOFF!!!");
+// }
+
 fn main() {
-    let mut number = 3;
-
-    while number != 0 {
+    for number in (1..4).rev() {
         println!("{}!", number);
-
-        number -= 1;
     }
-
     println!("LIFTOFF!!!");
 }
