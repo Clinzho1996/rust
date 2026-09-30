@@ -83,3 +83,11 @@ fn main() {
     let x = x * 2;
     println!("The value of x is: {}", x);
 }
+
+//comments in Rust are used to explain the code and make it more readable. Single-line comments start with //, while multi-line comments are enclosed in /* */. Comments are ignored by the compiler and do not affect the program's execution.
+
+// fn main() {
+//     // This is a single-line comment
+//     let x = 5; // This is a multi-line comment
+//     println!("The value of x is: {}", x);
+// }
