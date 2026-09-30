@@ -150,6 +150,8 @@ fn withdraw(account: &mut BankAccount, amount: f64) {
     }
 }
 
+use std::collections::HashMap;
+
 fn main() {
     let mut account = BankAccount {
         owner: "John Doe".to_string(),
@@ -191,18 +193,31 @@ fn main() {
 
 // error handling in Rust is done using the Result and Option types. The Result type is used for functions that can return an error, while the Option type is used for values that may or may not be present. Rust encourages handling errors explicitly, which helps prevent unexpected crashes and improves code reliability.
 
+// fn main() {
+//     let result = divide(11, 0);
+//     match result {
+//         Ok(value) => println!("Result: {}", value),
+//         Err(error) => println!("Error: {}", error),
+//     }
+// }
+
+// fn divide(a: i32, b: i32) -> Result<i32, String> {
+//     if b == 0 {
+//         Err("Cannot divide by zero".to_string())
+//     } else {
+//         Ok(a / b)
+//     }
+// }
+
+// Collection types in Rust are used to store multiple values in a single variable. The most commonly used collection types are arrays, vectors, and hash maps. Arrays have a fixed size and can hold elements of the same type, while vectors can grow or shrink in size and can also hold elements of the same type. Hash maps store key-value pairs and allow for efficient lookups based on keys.
+
 fn main() {
-    let result = divide(11, 0);
-    match result {
-        Ok(value) => println!("Result: {}", value),
-        Err(error) => println!("Error: {}", error),
-    }
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
+    let vector = vec![1, 2, 3, 4, 5];
+    // let hash_map = HashMap::new();
+
+    println!("Array: {:?}", array);
+    println!("Vector: {:?}", vector);
+    // println!("Hash map: {:?}", hash_map);
 }
 
-fn divide(a: i32, b: i32) -> Result<i32, String> {
-    if b == 0 {
-        Err("Cannot divide by zero".to_string())
-    } else {
-        Ok(a / b)
-    }
-}
