@@ -77,12 +77,12 @@
 
 // shadowing in Rust allows you to declare a new variable with the same name as a previous variable. The new variable shadows the previous one, effectively creating a new binding. This can be useful for transforming values or changing types while keeping the same variable name.
 
-fn main() {
-    let x = 5;
-    let x = x + 1;
-    let x = x * 2;
-    println!("The value of x is: {}", x);
-}
+// fn main() {
+//     let x = 5;
+//     let x = x + 1;
+//     let x = x * 2;
+//     println!("The value of x is: {}", x);
+// }
 
 //comments in Rust are used to explain the code and make it more readable. Single-line comments start with //, while multi-line comments are enclosed in /* */. Comments are ignored by the compiler and do not affect the program's execution.
 
@@ -91,3 +91,19 @@ fn main() {
 //     let x = 5; // This is a multi-line comment
 //     println!("The value of x is: {}", x);
 // }
+
+// control flow in Rust is used to determine the order in which statements are executed. Rust provides several control flow constructs, including if expressions, loops, and match expressions.
+
+// if else statements allow you to execute different blocks of code based on a condition. The condition must evaluate to a boolean value (true or false).
+
+fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else {
+        println!("number is not divisible by 4 or 3");
+    }
+}
