@@ -124,9 +124,39 @@
 //     println!("LIFTOFF!!!");
 // }
 
-fn main() {
-    for number in (1..4).rev() {
-        println!("{}!", number);
+// fn main() {
+//     for number in (1..4).rev() {
+//         println!("{}!", number);
+//     }
+//     println!("LIFTOFF!!!");
+// }
+
+// structs in Rust are a way to create custom data types that can hold multiple values. Structs can have fields of different types, and they can be used to model real-world entities.
+
+struct BankAccount {
+    owner: String,
+    account_number: String,
+    balance: f64,
+}
+
+fn withdraw(account: &mut BankAccount, amount: f64) {
+    if account.balance >= amount {
+        account.balance -= amount;
+        println!(" Account owned by {}", account.owner);
+        println!("Withdrawal successful. New balance: {}", account.balance);
+    } else {
+        println!(" Account owned by {}", account.owner);
+        println!("Insufficient funds. Current balance: {}", account.balance);
     }
-    println!("LIFTOFF!!!");
+}
+
+fn main() {
+    let mut account = BankAccount {
+        owner: "John Doe".to_string(),
+        account_number: "123456789".to_string(),
+        balance: 1000.0,
+    };
+
+    withdraw(&mut account, 1200.0);
+    withdraw(&mut account, 200.0);
 }
