@@ -192,9 +192,17 @@ fn main() {
 // error handling in Rust is done using the Result and Option types. The Result type is used for functions that can return an error, while the Option type is used for values that may or may not be present. Rust encourages handling errors explicitly, which helps prevent unexpected crashes and improves code reliability.
 
 fn main() {
-    let result = divide(10, 2);
+    let result = divide(11, 0);
     match result {
         Ok(value) => println!("Result: {}", value),
         Err(error) => println!("Error: {}", error),
+    }
+}
+
+fn divide(a: i32, b: i32) -> Result<i32, String> {
+    if b == 0 {
+        Err("Cannot divide by zero".to_string())
+    } else {
+        Ok(a / b)
     }
 }
