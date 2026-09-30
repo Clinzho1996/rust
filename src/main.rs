@@ -163,7 +163,7 @@ fn main() {
 
 // enums in Rust are a way to define a type that can be one of several variants. Enums are useful for representing a value that can take on different forms, such as a state or a choice.
 
-fn main() {
+/* fn main() {
     enum Direction {
         Up,
         Down,
@@ -186,5 +186,15 @@ fn main() {
         Direction::Down => println!("Enemy is moving down"),
         Direction::Left => println!("Enemy is moving left"),
         Direction::Right => println!("Enemy is moving right"),
+    }
+} */
+
+// error handling in Rust is done using the Result and Option types. The Result type is used for functions that can return an error, while the Option type is used for values that may or may not be present. Rust encourages handling errors explicitly, which helps prevent unexpected crashes and improves code reliability.
+
+fn main() {
+    let result = divide(10, 2);
+    match result {
+        Ok(value) => println!("Result: {}", value),
+        Err(error) => println!("Error: {}", error),
     }
 }
