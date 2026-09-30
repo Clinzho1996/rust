@@ -133,7 +133,7 @@
 
 // structs in Rust are a way to create custom data types that can hold multiple values. Structs can have fields of different types, and they can be used to model real-world entities.
 
-struct BankAccount {
+/*  struct BankAccount {
     owner: String,
     account_number: String,
     balance: f64,
@@ -159,4 +159,32 @@ fn main() {
 
     withdraw(&mut account, 1200.0);
     withdraw(&mut account, 200.0);
+} */ 
+
+// enums in Rust are a way to define a type that can be one of several variants. Enums are useful for representing a value that can take on different forms, such as a state or a choice.
+
+fn main() {
+    enum Direction {
+        Up,
+        Down,
+        Left,
+        Right,
+    }
+
+    let player_direction = Direction::Up;
+    let enemy_direction = Direction::Left;
+
+    match player_direction {
+        Direction::Up => println!("Player is moving up"),
+        Direction::Down => println!("Player is moving down"),
+        Direction::Left => println!("Player is moving left"),
+        Direction::Right => println!("Player is moving right"),
+    }
+
+    match enemy_direction {
+        Direction::Up => println!("Enemy is moving up"),
+        Direction::Down => println!("Enemy is moving down"),
+        Direction::Left => println!("Enemy is moving left"),
+        Direction::Right => println!("Enemy is moving right"),
+    }
 }
