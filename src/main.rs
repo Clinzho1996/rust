@@ -61,11 +61,25 @@
 
 //variables and mutability in Rust are important concepts that determine how data can be modified. By default, variables in Rust are immutable, meaning their values cannot be changed after they are assigned. However, you can make a variable mutable by using the mut keyword.
 
-fn main() {
-    let mut x = 5;
-    println!("The value of x is: {}", x);
-    x = 6;
-    println!("The value of x is: {}", x);
-}
+// fn main() {
+//     let mut x = 5;
+//     println!("The value of x is: {}", x);
+//     x = 6;
+//     println!("The value of x is: {}", x);
+// }
 
 //constants in Rust are similar to variables, but they are always immutable and must have a type annotation. Constants are defined using the const keyword and can be declared in any scope, including the global scope. They are typically used for values that should not change throughout the program.
+
+// fn main() {
+//     const MAX_POINTS: u32 = 100_000;
+//     println!("The value of MAX_POINTS is: {}", MAX_POINTS);
+// }
+
+// shadowing in Rust allows you to declare a new variable with the same name as a previous variable. The new variable shadows the previous one, effectively creating a new binding. This can be useful for transforming values or changing types while keeping the same variable name.
+
+fn main() {
+    let x = 5;
+    let x = x + 1;
+    let x = x * 2;
+    println!("The value of x is: {}", x);
+}
