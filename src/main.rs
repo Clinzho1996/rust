@@ -96,14 +96,30 @@
 
 // if else statements allow you to execute different blocks of code based on a condition. The condition must evaluate to a boolean value (true or false).
 
-fn main() {
-    let number = 6;
 
-    if number % 4 == 0 {
-        println!("number is divisible by 4");
-    } else if number % 3 == 0 {
-        println!("number is divisible by 3");
-    } else {
-        println!("number is not divisible by 4 or 3");
+
+// fn main() {
+//     let number = 6;
+
+//     if number % 4 == 0 {
+//         println!("number is divisible by 4");
+//     } else if number % 3 == 0 {
+//         println!("number is divisible by 3");
+//     } else {
+//         println!("number is not divisible by 4 or 3");
+//     }
+// }
+
+// loops allow you to execute a block of code multiple times. Rust provides two types of loops: while loops and for loops.
+
+fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}!", number);
+
+        number -= 1;
     }
+
+    println!("LIFTOFF!!!");
 }
